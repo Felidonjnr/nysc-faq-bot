@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NYSC FAQ Demo Assistant</title>
+    <meta
+      name="description"
+      content="A demo NYSC FAQ assistant powered by an Azure AI Language knowledge base."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark">N</div>
+          <div>
+            <p class="eyebrow">Portfolio Demo</p>
+            <h1>NYSC FAQ Demo Assistant</h1>
+          </div>
+        </div>
+        <a
+          id="officialLinkTop"
+          class="ghost-link"
+          href="https://www.nysc.gov.ng/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Official NYSC Website
+        </a>
+      </header>
+
+      <main class="layout">
+        <section class="hero card">
+          <div class="hero-copy">
+            <span class="pill">Custom Question Answering Demo</span>
+            <h2>A simple public-service style FAQ website for your Project 3 showcase</h2>
+            <p>
+              This demo answers questions from your deployed Azure knowledge base. It is built
+              for demonstration and evaluation, not as an official NYSC support channel.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <button id="scrollToChat" class="primary-btn" type="button">Try the demo</button>
+            <a
+              id="officialLinkHero"
+              class="secondary-btn"
+              href="https://www.nysc.gov.ng/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Verify on official source
+            </a>
+          </div>
+        </section>
+
+        <section class="chat-panel card" id="chatSection">
+          <div class="panel-head">
+            <div>
+              <p class="panel-label">Live Demo</p>
+              <h3>Ask a question</h3>
+            </div>
+            <button id="clearChat" class="text-btn" type="button">Clear chat</button>
+          </div>
+
+          <div class="disclaimer-box">
+            <strong>Important:</strong> This assistant is a student demo linked to official source
+            content. Always confirm time-sensitive actions on the official NYSC portal before you
+            act.
+          </div>
+
+          <div class="chip-row" id="chipRow">
+            <button class="chip" type="button">How do I register for NYSC?</button>
+            <button class="chip" type="button">How can I print my call-up letter?</button>
+            <button class="chip" type="button">What documents do I need for camp?</button>
+            <button class="chip" type="button">How do I reprint my Green Card?</button>
+          </div>
+
+          <div class="chat-box" id="chatBox" aria-live="polite">
+            <article class="message assistant">
+              <div class="avatar">AI</div>
+              <div class="bubble">
+                <p>
+                  Hello. I am a demo NYSC FAQ assistant. Ask me a question from the NYSC public
+                  information you added to your Azure knowledge base.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <form id="chatForm" class="composer">
+            <label class="sr-only" for="questionInput">Ask a question</label>
+            <textarea
+              id="questionInput"
+              name="question"
+              rows="1"
+              placeholder="Type your NYSC question here"
+              maxlength="300"
+              required
+            ></textarea>
+            <button class="primary-btn send-btn" type="submit" id="sendBtn">Send</button>
+          </form>
+        </section>
+
+        <aside class="info-stack">
+          <section class="card info-card">
+            <p class="panel-label">How the website is structured</p>
+            <h3>What users see</h3>
+            <ul>
+              <li>A clean landing section with a strong disclaimer</li>
+              <li>A chat interface for asking FAQ questions</li>
+              <li>A direct button to the official NYSC website</li>
+              <li>A safe fallback when the answer confidence is too low</li>
+            </ul>
+          </section>
+
+          <section class="card info-card">
+            <p class="panel-label">What powers it</p>
+            <h3>Behind the scenes</h3>
+            <ul>
+              <li>Frontend: simple HTML, CSS, and JavaScript</li>
+              <li>Backend: Vercel serverless function in <code>/api/ask.js</code></li>
+              <li>Azure AI Language Custom Question Answering runtime</li>
+              <li>Environment variables keep your Azure key private</li>
+            </ul>
+          </section>
+
+          <section class="card info-card accent">
+            <p class="panel-label">Deployment note</p>
+            <h3>Best way to present it</h3>
+            <p>
+              Present this as a <strong>demo prototype</strong> for educational use. Do not make it
+              look like an official NYSC product.
+            </p>
+          </section>
+        </aside>
+      </main>
+
+      <footer class="footer">
+        <p>
+          NYSC FAQ Demo Assistant • Built for AI-900 / Azure Language Project 3 demonstration
+        </p>
+      </footer>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
